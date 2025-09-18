@@ -163,15 +163,6 @@ var (
 			// better solution comes around. See Bug 27340895
 			"-D__ARM_FEATURE_LPAE=1",
 		},
-		"kryo385": []string{
-			// Use cortex-a53 because kryo385 is not supported in clang.
-			"-mcpu=cortex-a53",
-			// Fake an ARM compiler flag as these processors support LPAE which clang
-			// don't advertise.
-			// TODO This is a hack and we need to add it for each processor that supports LPAE until some
-			// better solution comes around. See Bug 27340895
-			"-D__ARM_FEATURE_LPAE=1",
-		},
 	}
 )
 
@@ -230,7 +221,6 @@ var (
 		"cortex-a15":     "${config.ArmCortexA15Cflags}",
 		"cortex-a32":     "${config.ArmCortexA32Cflags}",
 		"cortex-a53":     "${config.ArmCortexA53Cflags}",
-		"cortex-a53.a57": "${config.ArmCortexA53Cflags}",
 		"cortex-a55":     "${config.ArmCortexA55Cflags}",
 		"cortex-a72":     "${config.ArmCortexA53Cflags}",
 		"cortex-a73":     "${config.ArmCortexA53Cflags}",
@@ -238,9 +228,6 @@ var (
 		"cortex-a76":     "${config.ArmCortexA55Cflags}",
 		"krait":          "${config.ArmKraitCflags}",
 		"kryo":           "${config.ArmKryoCflags}",
-		"kryo385":        "${config.ArmCortexA53Cflags}",
-		"exynos-m1":      "${config.ArmCortexA53Cflags}",
-		"exynos-m2":      "${config.ArmCortexA53Cflags}",
 	}
 )
 
