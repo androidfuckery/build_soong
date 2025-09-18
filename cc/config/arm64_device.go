@@ -74,6 +74,9 @@ var (
 		"cortex-a76": []string{
 			"-mtune=cortex-a76",
 		},
+		"cortex-a720": []string{
+			"-mtune=cortex-a720",
+		},
 		"kryo": []string{
 			"-mtune=kryo",
 		},
@@ -112,6 +115,7 @@ func init() {
 	pctx.StaticVariable("Arm64CortexA73Cflags", strings.Join(arm64CpuVariantCflags["cortex-a73"], " "))
 	pctx.StaticVariable("Arm64CortexA75Cflags", strings.Join(arm64CpuVariantCflags["cortex-a75"], " "))
 	pctx.StaticVariable("Arm64CortexA76Cflags", strings.Join(arm64CpuVariantCflags["cortex-a76"], " "))
+	pctx.StaticVariable("Arm64CortexA720Cflags", strings.Join(arm64CpuVariantCflags["cortex-a720"], " "))
 	pctx.StaticVariable("Arm64KryoCflags", strings.Join(arm64CpuVariantCflags["kryo"], " "))
 	pctx.StaticVariable("Arm64OryonCflags", strings.Join(arm64CpuVariantCflags["oryon"], " "))
 
@@ -126,6 +130,7 @@ var (
 		"cortex-a73": "${config.Arm64CortexA73Cflags}",
 		"cortex-a75": "${config.Arm64CortexA75Cflags}",
 		"cortex-a76": "${config.Arm64CortexA76Cflags}",
+		"cortex-a720": "${config.Arm64CortexA720Cflags}",
 		"kryo":       "${config.Arm64KryoCflags}",
 		"oryon":      "${config.Arm64OryonCflags}",
 	}
